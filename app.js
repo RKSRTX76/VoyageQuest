@@ -81,9 +81,9 @@ const sessionOptions={
 }
 
 
-// app.get("/",(req,res)=>{
-//     res.send("Welcome to VoyageQuest Root page");
-// });
+app.get("/",(req,res)=>{
+    res.redirect("/listings");
+});
 
 
 
