@@ -1,0 +1,231 @@
+
+body{
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.container{
+    flex: 1;
+}
+/* Navbar */
+.navbar{
+    height: 5rem;
+    background-color: white;
+}
+#logo{
+font-size: 2rem;
+}
+.nav-link{
+    color: #222222 !important;   /* Override bootstrap text color */
+}
+
+/* Footer */
+.f-info-links a{
+    text-decoration: none;
+    color: #222222;
+}
+.f-info-links a:hover{
+    text-decoration: underline;
+    color: #222222;
+}
+.f-info-links, .f-info-socials{
+    width: 100%;
+}
+.f-info-socials, .f-info-brand{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.f-info-socials i{
+    font-size: 1.25rem;
+    margin-right: 1rem;
+}
+.f-info{
+    text-align: center;
+    height: 8rem;
+    background-color: #ebebeb;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: space-evenly;
+}
+/* Cards */
+.card{
+    border: none !important;
+}
+.listing-card{
+    border: none !important;
+    margin-bottom: 2rem;
+    transition: background-color 0.2s ease-out 0.1s, transform 0.3s ease-in-out;
+    will-change: transform;
+}
+.card-img-top{
+    border-radius: 1rem !important;
+    width: 100% !important;
+    object-fit: cover !important;
+    transition: transform 0.3s ease-in-out;
+}
+.card-body{
+    padding: 0 !important;
+}
+.card-text p{
+    font-weight: 400 !important;
+}
+.listing-link{
+    text-decoration: none;
+}
+/* Card Overlay effect */
+.card-img-overlay{
+    opacity: 0;
+}
+.card-img-overlay:hover{
+    opacity: 0.2;
+}
+/* Zoom-out effect on card image hover */
+.listing-card:hover .card-img-top {
+    transform: scale(0.98);
+    transition: transform 0.3s ease-in-out;
+}
+.zoom{
+    transition: none !important;
+    transform: none !important;
+}
+/* New Page */
+.add-btn {
+    background-color: #d40464 !important;
+    border: none !important;
+    transition: transform 0.2s ease-out, background-color 0.2s ease-out 0.1s; /* Add a transition on the transform property and a 0.1s delay for background-color */
+}
+
+.add-btn:active {
+    background-color: #d92e34 !important;
+    transform: scale(0.95); /* Apply a slight zoom-out effect on click */
+}
+.back{
+    transition: transform 0.2s ease-out, background-color 0.2s ease-out 0.1s;
+}
+.back:active{
+    transform: scale(0.95);
+}
+/* Edit Page */
+.edit-btn{
+    background-color: #d40464 !important;
+    border: none !important;
+    transition: transform 0.2s ease-out, background-color 0.2s ease-out 0.1s;
+}
+.edit-btn:active {
+    background-color: #d92e34 !important;
+    transform: scale(0.95); /* Apply a slight zoom-out effect on click */
+}
+/* Show Page */
+.show-image{
+    height: 40vh !important;
+}
+
+.btns{
+    display: flex;
+}
+.show-card{
+    padding-left: 0;
+    padding-right: 0;
+}
+
+/* signup */
+.signup{
+    width: 470px !important;
+}
+.center{
+    display: flex;
+    justify-content: center !important;
+}
+.header{
+    text-align: center;
+}
+
+.preview{
+    height: 150px;
+    width: 250px;
+}
+.preview img{
+    width: 100%;
+    height: 100%;
+}
+
+
+/* Map */
+#map { 
+    height: 400px; 
+    width: 80vh;
+}
+
+
+/* Filters */
+#filters {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.filter {
+    text-align: center;
+    margin-right: 2rem;
+    margin-top: 2rem;
+    opacity: 0.7;
+}
+
+.filter:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+
+.filter p {
+    font-size: 0.8rem;
+}
+
+.tax-info{
+    display: none;
+}
+.tax-toggle{
+    border: 1px solid #e4e4e4;
+    border-radius: 1rem;
+    height: 3.25rem;
+    padding: 1rem;
+    margin-left: 4rem;
+    display: flex;
+    align-items: center;
+}
+
+
+/* search */
+.btn-search{
+    background-color: #d92e34;
+    color: white;
+    border-radius: 25px;
+    padding: 0 1rem 0 1rem;
+}
+.btn-search:hover{
+    background-color: #d92e34;
+    color: white;
+}
+.btn-search i{
+    display: inline;
+    margin-right: 0.5rem;
+}
+
+.search-input{
+    border-radius: 25px;
+    padding: 0.5rem 3rem 0.5rem 3rem;
+    font-size: 0.9rem;
+    margin-left: 15rem;
+    width: 400px;
+    text-align: center;
+}
+
+.your-home{
+    margin-right: 3rem;
+}
+
+
