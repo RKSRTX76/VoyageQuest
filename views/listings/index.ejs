@@ -87,6 +87,19 @@
                     <p>Boats</p>
                 </form>
             </div>
+            <div class="filter">
+                <form action="/listings/type/Castles" method="GET" id="myForm">
+                  <div><i class="fa-brands fa-fort-awesome"></i></div>
+                  <p>Castles</p>
+                </form>
+              </div>
+            <div class="filter">
+                <form action="/listings/type/Farms" method="GET" id="myForm">
+                    <div><i class="fa-solid fa-cow"></i></div>
+                    <p>Farms</p>
+                </form>
+            </div>
+            
             
             <div class="tax-toggle">
                 <div class="form-check-reverse form-switch">
@@ -107,8 +120,15 @@
                                 <b>
                                     <%= listing.title %>
                                 </b> <br>
-                                &#8377;<%=listing.price.toLocaleString("en-IN")%> / night
-                                <i class="tax-info">&nbsp; &nbsp; + GST</i>
+                                
+                                <span class="price-info" style="display: none;">
+                                   <b>&#8377;<%= (listing.price * 5).toLocaleString("en-IN") %> / 5 nights
+                                    <i class="tax-info">&nbsp; &nbsp; total before taxes</i> </b>
+                                </span>
+                                <!-- Show nightly price -->
+                                <span class="nightly-price">
+                                    &#8377;<%= listing.price.toLocaleString("en-IN") %> / night
+                                </span>
                             </p>
                         </div>
                     </div>
@@ -117,18 +137,24 @@
         </div>
 
         <script>
-            let taxSwitch=document.getElementById("flexSwitchCheckDefault");
-            taxSwitch.addEventListener("click",()=>{
-                let taxInfo=document.getElementsByClassName("tax-info");
-                for(info of taxInfo){
-                    if(info.style.display !="inline"){
-                        info.style.display="inline";
-                    }
-                    else{
-                        info.style.display="none";
-                    }
+            let taxSwitch = document.getElementById("flexSwitchCheckDefault");
+            taxSwitch.addEventListener("click", () => {
+                let taxInfo = document.getElementsByClassName("tax-info");
+                let priceInfo = document.getElementsByClassName("price-info");
+                let nightlyPrice = document.getElementsByClassName("nightly-price");
+
+                for (info of taxInfo) {
+                    info.style.display = taxSwitch.checked ? "inline" : "none";
                 }
-            });
+
+                for (info of priceInfo) {
+                    info.style.display = taxSwitch.checked ? "inline" : "none";
+                }
+
+                for (info of nightlyPrice) {
+                    info.style.display = taxSwitch.checked ? "none" : "inline";
+                }
+    });
             
             let icons=document.getElementsByClassName("filter");
             for(icon of icons){
