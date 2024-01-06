@@ -29,6 +29,24 @@
                 <input type="text" name="listing[image]" placeholder="Enter image URL" class="form-control">
             </div> -->
 
+            <div class="mb-3"  class="form-select form-select-lg">
+                <label for="listingCategory" class="form-label">Category</label>
+                <select class="form-select listing-create" name="listing[category]" id="listingCategory" required>
+                    <option value="" disabled selected>Choose Category</option>
+                    <option value="Trending">Trending</option>
+                    <option value="New">New</option>
+                    <option value="Rooms">Rooms</option>
+                    <option value="Pools">Pools</option>
+                    <option value="Luxe">Luxe</option>
+                    <option value="Beachfront">Beachfront</option>
+                    <option value="Iconic">Iconic</option>
+                    <option value="Domes">Domes</option>
+                    <option value="Countryside">Countryside</option>
+                    <option value="Artic">Artic</option>
+                    <option value="Boats">Boats</option>
+                </select>
+            </div>
+
             <div class="mb-3">
                 <label for="image" class="form-label">Upload Image</label>
                 <input type="file" name="listing[image]" placeholder="Enter image URL" class="form-control" required>

@@ -24,12 +24,12 @@ router
     wrapAsync(listingController.createListing));
 
 
-
-
-
 //New route
 router.get("/new",isLoggedin,listingController.renderNewForm);
 
+
+// category
+router.get("/type/:category",listingController.category);
 
 router
 .route("/:id")
@@ -51,8 +51,15 @@ router
 //create route
 // router.post("/",isLoggedin,validateListing,wrapAsync(listingController.createListing));
 
+
+
 //Edit route
 router.get("/:id/edit",isLoggedin,isOwner,wrapAsync(listingController.renderEditForm));
+
+
+// Search
+router.post("/filter",listingController.filter);
+
 
 //update route
 // router.put("/:id",isLoggedin,isOwner,validateListing,wrapAsync(listingController.updateListing));

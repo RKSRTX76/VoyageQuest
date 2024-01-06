@@ -47,12 +47,10 @@ main().then(()=>{
 });
 
 async function main() {
-//   await mongoose.connect('mongodb://127.0.0.1:27017/voyagequest');
+
 
 await mongoose.connect(dbUrl);
 
-
-  // use `await mongoose.connect('mongodb://user:password@127.0.0.1:27017/test');` if your database has auth enabled
 }
 
 const store=MongoStore.create({
@@ -119,19 +117,19 @@ app.use((req,res,next)=>{
 
 
 //testing route
-app.get("/testListing",async (req,res)=>{
-    let sampleListing=new Listing({
-        title:"My new Villa",
-        description:"Mannat",
-        price:50000,
-        location:"Kerala",
-        country:"India",
+// app.get("/testListing",async (req,res)=>{
+//     let sampleListing=new Listing({
+//         title:"My new Villa",
+//         description:"Mannat",
+//         price:50000,
+//         location:"Kerala",
+//         country:"India",
 
-    });
-    await sampleListing.save();
-    console.log("Sample data Saved");
-    res.send("Testing Successful");
-});
+//     });
+//     await sampleListing.save();
+//     console.log("Sample data Saved");
+//     res.send("Testing Successful");
+// });
 
 
 

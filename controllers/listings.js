@@ -5,8 +5,8 @@ const mapToken= process.env.MAP_TOKEN;
 const geocodingClient = mbxGeocoding({ accessToken: mapToken });
 
 module.exports.index=async (req,res)=>{
-    const allListings=await Listing.find({});
-    res.render("listings/index.ejs",{allListings});
+    const listings=await Listing.find({});
+    res.render("listings/index.ejs",{listings});
 };
 
 module.exports.renderNewForm=(req,res)=>{
@@ -63,6 +63,9 @@ module.exports.createListing=async(req,res,next)=>{
     res.redirect("/listings");
 };
 
+
+
+
 module.exports.renderEditForm=async (req,res)=>{
     let {id}=req.params;
     const listing=await Listing.findById(id);
@@ -94,4 +97,16 @@ module.exports.destroyListing=async (req,res)=>{
     req.flash("success","Listing deleted!");
     console.log(deletedListing);
     res.redirect("/listings");
+};
+
+// Category
+module.exports.category=async(req,res)=>{
+    let {category}=req.params;
+    let listings=await Listing.find({category:category});
+    res.render("listings/index.ejs",{listings});
+};
+module.exports.filter=async(req,res)=>{
+    let {title}=req.body;
+    let listings=await Listing.find({title:title});
+    res.render("listings/index.ejs",{listings});
 };

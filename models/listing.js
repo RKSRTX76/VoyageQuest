@@ -36,6 +36,11 @@ const listingSchema=new Schema({
             type: [Number],
             required: true
           }
+    },
+    category:{
+        type:String,
+        enum: ["Trending","New","Rooms","Pools","Luxe","Beachfront","Iconic","Domes","Countryside","Artic","Boats"],
+        required:true,
     }
 });
 

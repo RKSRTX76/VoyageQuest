@@ -6,55 +6,88 @@
         <!-- <form method="GET" action="/listings/new">
         <button>Create New Listing</button>
     </form> -->
+    
 
+<div id="filters">
 
-        <div id="filters">
             <div class="filter">
-                <div><i class="fa-solid fa-fire"></i></div>
-                <p>Trending</p>
+                <form action="/listings/type/Trending" method="GET" id="myForm">
+                        <div><i class="fa-solid fa-fire"></i></div>
+                        <p>Trending</p>
+                </form>    
             </div>
+
+            </form>
             <div class="filter">
-                <div><i class="fa-solid fa-bed"></i></div>
-                <p>Rooms</p>
+                <form action="/listings/type/New" method="GET" id="myForm">
+                        <div><i class="fa-solid fa-key"></i></div>
+                        <p>New</p>
+                </form>   
             </div>
+
             <div class="filter">
-                <div><i class="fa-solid fa-person-swimming"></i></div>
-                <p>Amazing pools</p>
+                <form action="/listings/type/Rooms" method="GET" id="myForm">
+                    <div><i class="fa-solid fa-bed"></i></div>
+                    <p>Rooms</p>
+                </form>
             </div>
+
             <div class="filter">
-                <div><i class="fa-solid fa-circle-dollar-to-slot"></i></div>
-                <p>Luxe</p>
+                <form action="/listings/type/Pools" method="GET" id="myForm">
+                    <div><i class="fa-solid fa-person-swimming"></i></div>
+                    <p>Pools</p>
+                </form>
             </div>
+
             <div class="filter">
-                <div><i class="fa-solid fa-umbrella-beach"></i></div>
-                <p>Beachfront</p>
+                <form action="/listings/type/Luxe" method="GET" id="myForm">
+                    <div><i class="fa-solid fa-circle-dollar-to-slot"></i></div>
+                    <p>Luxe</p>
+                </form>
             </div>
+
             <div class="filter">
-                <div><i class="fa-solid fa-city"></i></div>
-                <p>Iconic cities</p>
+                <form action="/listings/type/Beachfront" method="GET" id="myForm">
+                    <div><i class="fa-solid fa-umbrella-beach"></i></div>
+                    <p>Beachfront</p>
+                </form>
             </div>
+
             <div class="filter">
-                <div><i class="fa-solid fa-key"></i></div>
-                <p>New</p>
+                <form action="/listings/type/Iconic" method="GET" id="myForm">
+                    <div><i class="fa-solid fa-city"></i></div>
+                    <p>Iconic</p>
+                </form>
             </div>
+
             <div class="filter">
-                <div><i class="fa-solid fa-house-user"></i></div>
-                <p>Tiny homes</p>
+                <form action="/listings/type/Domes" method="GET" id="myForm">
+                    <div><i class="fa-solid fa-house-user"></i></div>
+                    <p>Domes</p>
+                </form>
             </div>
+
             <div class="filter">
-                <div><i class="fa-solid fa-earth-americas"></i></div>
-                <p>Countryside</p>
+                <form action="/listings/type/Countryside" method="GET" id="myForm">
+                    <div><i class="fa-solid fa-earth-americas"></i></div>
+                    <p>Countryside</p>
+                </form>
             </div>
+
             <div class="filter">
-                <div><i class="fa-solid fa-snowflake"></i></div>
-                <p>Artic</p>
+                <form action="/listings/type/Artic" method="GET" id="myForm">
+                    <div><i class="fa-solid fa-snowflake"></i></div>
+                    <p>Artic</p>
+                </form>
             </div>
+
             <div class="filter">
-                <div><i class="fa-solid fa-earth-americas"></i></div>
-                <p>Countryside</p>
+                <form action="/listings/type/Boats" method="GET" id="myForm">
+                    <div><i class="fa-solid fa-ship"></i></div>
+                    <p>Boats</p>
+                </form>
             </div>
             
-
             <div class="tax-toggle">
                 <div class="form-check-reverse form-switch">
                     <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
@@ -63,7 +96,7 @@
             </div>
         </div>
         <div class="row row-cols-lg-3  row-cols-md-2 row-cols-sm-1">
-            <% for(let listing of allListings){ %>
+            <% for(let listing of listings){ %>
                 <a href="/listings/<%= listing._id  %>" class="listing-link">
                     <div class="card col listing-card">
                         <img src="<%= listing.image.url %>" class="card-img-top" alt="listing_image"
@@ -97,6 +130,14 @@
                 }
             });
             
+            let icons=document.getElementsByClassName("filter");
+            for(icon of icons){
+                icon.addEventListener("click",(event)=>{
+                    let div= event.currentTarget;
+                    div.children[0].submit();
+                });
+            }
+
         </script>
 
 
