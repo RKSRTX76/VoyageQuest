@@ -23,9 +23,18 @@ To embark on your journey with VoyageQuest, follow these simple steps:
     4. Run server `node app.js` or `nodemon app.js`
 
 ## Screenshots
+![image](https://github.com/RKSRTX76/VoyageQuest/assets/79634846/91b73b9c-cc74-4ad0-9d60-559868ea0689)
+// sign up
 ![image](https://github.com/RKSRTX76/VoyageQuest/assets/79634846/09b29e29-b0df-42ba-953e-3c8257e94b8c)
-![image](https://github.com/RKSRTX76/VoyageQuest/assets/79634846/2fe36bd1-451e-4ae8-85c8-0001871707bd)
-![Uploading image.png…]()
+![image](https://github.com/RKSRTX76/VoyageQuest/assets/79634846/a01b044b-3c8f-435f-815f-fdf11d819434)
+![image](https://github.com/RKSRTX76/VoyageQuest/assets/79634846/370e744e-6792-423e-be3d-ef599f5adecd)
+![image](https://github.com/RKSRTX76/VoyageQuest/assets/79634846/a69ee488-6c26-48f0-b3da-26c4a67fcdb9)
+![image](https://github.com/RKSRTX76/VoyageQuest/assets/79634846/a65d807b-7c8d-4087-b08f-0cb0dad6a686)
+
+
+
+
+
 
 
 
