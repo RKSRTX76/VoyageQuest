@@ -14,7 +14,8 @@ body{
     background-color: white;
 }
 #logo{
-font-size: 2rem;
+    font-size: 2.5rem;
+    margin-left: 2rem;
 }
 .nav-link{
     color: #222222 !important;   /* Override bootstrap text color */
@@ -228,4 +229,42 @@ font-size: 2rem;
     margin-right: 3rem;
 }
 
+/* navbar Prfile */
+.user-icon-container {
+    cursor: pointer;
+    position: relative; /* Make the container a positioning context */
+    display: flex;
+    align-items: center;
+    margin-right: 5rem;
+  }
 
+  .user-icon-container i {
+    font-size: 30px;
+    color: #333; /* Adjust the color as needed */
+    margin-right: 0.5rem;
+  }
+
+  .user-options-container {
+    position: absolute;
+    top: 100%; /* Position it below the user icon */
+    right: 0; /* Align it to the right side */
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: none;
+    z-index: 1000;
+    width: 15rem; /* Adjust the width as needed */
+    padding-left: 2px;
+    border-radius: 15px;
+  }
+
+  .user-options-container a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #333;
+  }
+
+  .user-options-container a:hover {
+    background-color: #f0f0f0;
+  }
