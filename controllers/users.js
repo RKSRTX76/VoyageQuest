@@ -1,4 +1,5 @@
 const User=require("../models/user.js");
+const wrapAsync = require("../utils/wrapAsync.js");
 
 
 module.exports.renderSignUpForm=(req,res)=>{
@@ -49,4 +50,8 @@ module.exports.logout=(req,res,next)=>{
         req.flash("success","Logout successfully!");
         res.redirect("/listings");
     });
+};
+
+module.exports.displayUser = (req, res) => {
+    res.render("users/user.ejs", { user: req.user });
 };

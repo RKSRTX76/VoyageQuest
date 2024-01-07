@@ -269,6 +269,10 @@ body{
     background-color: #f0f0f0;
   }
 
+  .user-top{
+    margin-top: 3rem;;
+  }
+
 
   /* Media query */
   @media(max-width: 1115px){

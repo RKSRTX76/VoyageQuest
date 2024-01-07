@@ -4,6 +4,7 @@ const User=require("../models/user.js");
 const wrapAsync = require("../utils/wrapAsync");
 const passport = require("passport");
 const { savedRedirectUrl } = require("../middleware.js");
+const {isLoggedin}=require("../middleware.js");
 
 const userController=require("../controllers/users.js");
 
@@ -27,6 +28,9 @@ passport.authenticate("local",{
     userController.login)
 
 router.get("/logout",userController.logout);
+
+router.get("/user", isLoggedin, userController.displayUser);
+
 
 module.exports=router;
 
