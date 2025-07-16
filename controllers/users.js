@@ -34,7 +34,7 @@ module.exports.renderLoginForm=(req,res)=>{
 
 
 module.exports.login=async(req,res)=>{
-    req.flash("success","Welcome back to TravelVenture!");
+    req.flash("success","Welcome back to VoyageQuest");
     // Note   passport clear session that's why we use locals
     // res.redirect(req.session.redirectUrl);
     let redirectUrl=res.locals.redirectUrl || "/listings" ;
